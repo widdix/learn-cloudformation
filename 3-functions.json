@@ -19,7 +19,7 @@
 		},
 		"URL": {
 			"Description": "URL for load testing",
-			"Type": "String",
+			"Type": "String"
 		}
 	},
 	"Resources": {
