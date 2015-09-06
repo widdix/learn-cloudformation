@@ -1,0 +1,82 @@
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Description": "EC2 instance with functions",
+	"Parameters": {
+		"KeyName": {
+			"Description": "Key Pair name",
+			"Type": "AWS::EC2::KeyPair::KeyName"
+		},
+		"VPC": {
+			"Description": "VPC to launch virtual server in",
+			"Type": "AWS::EC2::VPC::Id"
+		},
+		"Subnet": {
+			"Description": "subnet to launch virtual server in",
+			"Type": "AWS::EC2::Subnet::Id"
+		},
+		"URL": {
+			"Description": "URL for load testing",
+			"Type": "String",
+			"Default": "http://widdix.net/"
+		}
+	},
+	"Mappings": {
+		"RegionAMIMap": {
+			"ap-northeast-1": {"AmazonLinux": "ami-cbf90ecb"},
+			"ap-southeast-1": {"AmazonLinux": "ami-68d8e93a"},
+			"ap-southeast-2": {"AmazonLinux": "ami-fd9cecc7"},
+			"eu-central-1": {"AmazonLinux": "ami-a8221fb5"},
+			"eu-west-1": {"AmazonLinux": "ami-a10897d6"},
+			"sa-east-1": {"AmazonLinux": "ami-b52890a8"},
+			"us-east-1": {"AmazonLinux": "ami-1ecae776"},
+			"us-west-1": {"AmazonLinux": "ami-d114f295"},
+			"us-west-2": {"AmazonLinux": "ami-e7527ed7"}
+		}
+	},
+	"Resources": {
+		"SecurityGroup": {
+			"Type": "AWS::EC2::SecurityGroup",
+			"Properties": {
+				"GroupDescription": "allow-ssh",
+				"VpcId": {"Ref": "VPC"},
+				"SecurityGroupIngress": [{
+					"CidrIp": "0.0.0.0/0",
+					"FromPort": 22,
+					"IpProtocol": "tcp",
+					"ToPort": 22
+				}]
+			}
+		},
+		"EC2Instance": {
+			"Type": "AWS::EC2::Instance",
+			"Properties": {
+				"ImageId": {"Fn::FindInMap": ["RegionAMIMap", {"Ref": "AWS::Region"}, "AmazonLinux"]},
+				"InstanceType": "t2.micro",
+				"SubnetId": {"Ref": "Subnet"},
+				"Tags": [
+					{
+						"Key": "Name",
+						"Value": "learn-cloudformation-5-dependencies"
+					}
+				],
+				"UserData": {"Fn::Base64": {"Fn::Join": ["", [
+					"#!/bin/bash -ex\n",
+					"yum install -y httpd-tools\n",
+					"ab -n 1000 -c 4 ", {"Ref": "URL"}, "\n"
+				]]}},
+				"KeyName": {"Ref": "KeyName"},
+				"SecurityGroupIds": [{"Ref": "SecurityGroup"}]
+			}
+		}
+	},
+	"Outputs": {
+		"InstanceId": {
+			"Value": {"Ref": "EC2Instance"},
+			"Description": "ID of virtual server"
+		},
+		"PublicIPAddress": {
+			"Value": {"Fn::GetAtt": ["EC2Instance", "PublicIp"]},
+			"Description": "public IP address of virtual server"
+		}
+	}
+}
