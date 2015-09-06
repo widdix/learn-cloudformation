@@ -33,7 +33,7 @@
 				"Tags": [
 					{
 						"Key": "Name",
-						"Value": "learn-cloudformation-3-functions"
+						"Value": "learn-cloudformation-4-outputs"
 					}
 				],
 				"UserData": {"Fn::Base64": {"Fn::Join": ["", [
@@ -42,6 +42,16 @@
 					"ab -n 1000 -c 4 ", {"Ref": "URL"}, "\n"
 				]]}}
 			}
+		}
+	},
+	"Outputs": {
+		"InstanceId": {
+			"Value": {"Ref": "EC2Instance"},
+			"Description": "ID of virtual server"
+		},
+		"PublicIPAddress": {
+			"Value": {"Fn::GetAtt": ["EC2Instance", "PublicIp"]},
+			"Description": "public IP address of virtual server"
 		}
 	}
 }
