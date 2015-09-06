@@ -37,7 +37,7 @@
 				],
 				"UserData": {"Fn::Base64": {"Fn::Join": ["", [
 					"#!/bin/bash -ex\n",
-					" yum install -y httpd-tools\n",
+					"yum install -y httpd-tools\n",
 					"ab -n 1000 -c 4 ", {"Ref": "URL"}, "\n"
 				]]}}
 			}
