@@ -11,4 +11,4 @@ http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-st
 
 
 ## Highlight
-highlight -S js -O rtf --style night --font-size 30 0-resource.jso | pbcopy 
+highlight -S js -O rtf --style night --font-size 30 presentations/7-nested.json | pbcopy 
