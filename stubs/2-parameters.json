@@ -2,21 +2,10 @@
 	"AWSTemplateFormatVersion": "2010-09-09",
 	"Description": "EC2 instance with parameters",
 	"Parameters": {
-		"AMI": {
-			"Description": "AMI to start virtual server",
-			"Type": "String",
-			"MaxLength": 12,
-			"MinLength": 12
-		},
-		"InstanceType": {
-			"Description": "instance type of virtual server",
-			"Type": "String",
-			"AllowedValues": ["t2.micro", "t2.small", "t2.medium"]
-		},
-		"Subnet": {
-			"Description": "subnet to launch virtual server in",
-			"Type": "AWS::EC2::Subnet::Id"
-		}
+		// TODO add parameters
+		// ImageID: String
+		// InstanceType: String
+		// SubnetId: Subnet-ID (AWS resource type)
 	},
 	"Resources": {
 		"EC2Instance": {
