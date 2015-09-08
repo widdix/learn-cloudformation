@@ -21,35 +21,13 @@
 		}
 	},
 	"Resources": {
-		"EC2Stack": {
-			"Type" : "AWS::CloudFormation::Stack",
-			"Properties" : {
-				"Parameters" : {
-					"KeyName": {"Ref": "KeyName"},
-					"VPC": {"Ref": "VPC"},
-					"Subnet": {"Ref": "Subnet"},
-					"URL": {"Ref": "URL"}
-				},
-				"TemplateURL" : "https://s3-eu-west-1.amazonaws.com/learn-cloudformation/6-mappings.json",
-				"TimeoutInMinutes" : "5"
-			}
-		},
-		"S3Stack": {
-			"Type" : "AWS::CloudFormation::Stack",
-			"Properties" : {
-				"TemplateURL" : "https://s3-eu-west-1.amazonaws.com/learn-cloudformation/1-simple.json",
-				"TimeoutInMinutes" : "2"
-			}
-		}
+		// add stacks (S3 and EC2)
+		// https://s3-eu-west-1.amazonaws.com/learn-cloudformation/solutions/6-mappings.json
+		// https://s3-eu-west-1.amazonaws.com/learn-cloudformation/solutions/1-simple.json
+
 	},
 	"Outputs": {
-		"InstanceId": {
-			"Value": {"Fn::GetAtt" : ["EC2Stack", "Outputs.InstanceId"]},
-			"Description": "ID of virtual server"
-		},
-		"PublicIPAddress": {
-			"Value": {"Fn::GetAtt" : ["EC2Stack", "Outputs.PublicIPAddress"]},
-			"Description": "public IP address of virtual server"
-		}
+		// TODO add outputs
+		// from stack EC2 (instance id and public IP address)
 	}
 }

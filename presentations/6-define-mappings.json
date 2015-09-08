@@ -1,0 +1,13 @@
+"Mappings": {
+	"RegionAMIMap": {
+		"ap-northeast-1": {"AmazonLinux": "ami-cbf90ecb"},
+		"ap-southeast-1": {"AmazonLinux": "ami-68d8e93a"},
+		"ap-southeast-2": {"AmazonLinux": "ami-fd9cecc7"},
+		"eu-central-1": {"AmazonLinux": "ami-a8221fb5"},
+		"eu-west-1": {"AmazonLinux": "ami-a10897d6"},
+		"sa-east-1": {"AmazonLinux": "ami-b52890a8"},
+		"us-east-1": {"AmazonLinux": "ami-1ecae776"},
+		"us-west-1": {"AmazonLinux": "ami-d114f295"},
+		"us-west-2": {"AmazonLinux": "ami-e7527ed7"}
+	}
+}

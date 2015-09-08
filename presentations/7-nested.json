@@ -1,0 +1,9 @@
+"Resources": {
+	"S3Stack": {
+		"Type" : "AWS::CloudFormation::Stack",
+		"Properties" : {
+			"TemplateURL" : "https://.../1-simple.json",
+			"TimeoutInMinutes" : "2"
+		}
+	}
+}
