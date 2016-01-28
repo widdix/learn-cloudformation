@@ -57,7 +57,7 @@
 					"yum install -y httpd-tools\n",
 					"ab -n 1000 -c 4 ", {"Ref": "URL"}, "\n"
 				]]}},
-				"KeyName": {"Ref": "KeyName"},
+				"KeyName": // TODO reference KeyName 
 				"SecurityGroupIds": [
 					// TODO reference SecurityGroup 
 				]
