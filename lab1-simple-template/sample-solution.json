@@ -1,13 +1,11 @@
 {
 	"AWSTemplateFormatVersion": "2010-09-09",
-	"Description": "S3 bucket acting as static website",
+	"Description": "Simple S3 bucket",
 	"Resources": {
 		"S3Bucket": {
 			"Type" : "AWS::S3::Bucket",
 			"Properties": {
-				"WebsiteConfiguration": {
-					"IndexDocument" : "index.html"
-				}
+				"BucketName": "learn-cloudformation-$username"
 			}
 		}
 	}
