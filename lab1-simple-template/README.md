@@ -33,8 +33,8 @@ Create a S3 bucket with the help of CloudFormation.
 1. Congratulations! You are done with the lab!
 
 ## Documentation
-[Template anatomy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)
-[Resource Type: S3 bucket](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html)
+* [Template anatomy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)
+* [Resource Type: S3 bucket](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html)
 
 ## Sample solution
 This lab includes a sample solution ``sample-solution.json``. Use it if you are stuck during the creation of your template of if you want to review your results.
