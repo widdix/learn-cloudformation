@@ -1,0 +1,151 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Rolling Update",
+  "Parameters": {
+    "VPCParameter": {
+      "Description": "VPC to launch instances into",
+      "Type": "AWS::EC2::VPC::Id"
+    },
+    "SubnetsParameter": {
+      "Description": "Subnets to launch instances into",
+      "Type": "List<AWS::EC2::Subnet::Id>"
+    },
+    "VersionParameter": {
+      "Description": "Software version to deploy",
+      "Type": "String"
+    }
+  },
+  "Mappings": {
+    "RegionMap": {
+      "eu-west-1": {"AMI": "ami-bff32ccc"},
+      "ap-southeast-1": {"AMI": "ami-c9b572aa"},
+      "ap-southeast-2": {"AMI": "ami-48d38c2b"},
+      "eu-central-1": {"AMI": "ami-bc5b48d0"},
+      "ap-northeast-2": {"AMI": "ami-249b554a"},
+      "ap-northeast-1": {"AMI": "ami-383c1956"},
+      "us-east-1": {"AMI": "ami-60b6c60a"},
+      "sa-east-1": {"AMI": "ami-6817af04"},
+      "us-west-1": {"AMI": "ami-d5ea86b5"},
+      "us-west-2": {"AMI": "ami-f0091d91"}
+    }
+  },
+  "Resources": {
+    "ELBSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "elb-sg",
+        "SecurityGroupEgress": [{
+          "IpProtocol": "-1",
+          "CidrIp": "0.0.0.0/0"
+        }],
+        "SecurityGroupIngress": [{
+          "CidrIp": "0.0.0.0/0",
+          "FromPort": 80,
+          "IpProtocol": "tcp",
+          "ToPort": 80
+        }],
+        "VpcId": {"Ref": "VPCParameter"}
+      }
+    },
+    "ELB": {
+      "Type": "AWS::ElasticLoadBalancing::LoadBalancer",
+      "Properties": {
+        "ConnectionDrainingPolicy": {
+          "Enabled": true,
+          "Timeout": 30
+        },
+        "CrossZone": true,
+        "HealthCheck": {
+          "HealthyThreshold": "2",
+          "Interval": "10",
+          "Target": "HTTP:80/",
+          "Timeout": "5",
+          "UnhealthyThreshold": "2"
+        },
+        "LoadBalancerName": "elb",
+        "Listeners": [{
+          "InstancePort": "80",
+          "InstanceProtocol": "HTTP",
+          "LoadBalancerPort": "80",
+          "Protocol": "HTTP"
+        }],
+        "Scheme": "internet-facing",
+        "SecurityGroups": [{"Ref": "ELBSecurityGroup"}],
+        "Subnets": {"Ref": "SubnetsParameter"}
+      }
+    },
+    "EC2SecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "ec2-sg",
+        "SecurityGroupEgress": [{
+          "IpProtocol": "-1",
+          "CidrIp": "0.0.0.0/0"
+        }],
+        "SecurityGroupIngress": [{
+          "CidrIp": "0.0.0.0/0",
+          "FromPort": 22,
+          "IpProtocol": "tcp",
+          "ToPort": 22
+        }, {
+          "FromPort": 80,
+          "IpProtocol": "tcp",
+          "SourceSecurityGroupId": {"Ref": "ELBSecurityGroup"},
+          "ToPort": 80
+        }],
+        "VpcId": {"Ref": "VPCParameter"}
+      }
+    },
+    "LaunchConfiguration": {
+      "Type": "AWS::AutoScaling::LaunchConfiguration",
+      "Properties": {
+        "AssociatePublicIpAddress": true,
+        "ImageId": {"Fn::FindInMap": ["RegionMap", {"Ref": "AWS::Region"}, "AMI"]},
+        "InstanceType": "t2.micro",
+        "SecurityGroups": [{"Ref": "EC2SecurityGroup"}],
+        "UserData": {"Fn::Base64": {"Fn::Join": ["", [
+          "#!/bin/bash -ex", "\n",
+          "yum -y install httpd", "\n",
+          "chkconfig httpd on", "\n",
+          "echo \"Version ", {"Ref": "VersionParameter"}, "\" >> /var/www/html/index.html", "\n",
+          "service httpd start", "\n",
+          "/opt/aws/bin/cfn-signal -e 0 --region ", {"Ref": "AWS::Region"}, " --stack ", {"Ref": "AWS::StackName"}, " --resource AutoScalingGroup", "\n"
+        ]]}}
+      }
+    },
+    "AutoScalingGroup": {
+      "Type": "AWS::AutoScaling::AutoScalingGroup",
+      "Properties": {
+        "MinSize": "1",
+        "MaxSize": "2",
+        "DesiredCapacity": "1",
+        "LaunchConfigurationName": {"Ref": "LaunchConfiguration"},
+        "VPCZoneIdentifier": {"Ref": "SubnetsParameter"},
+        "LoadBalancerNames": [{"Ref": "ELB"}],
+        "HealthCheckGracePeriod": 60,
+        "HealthCheckType": "ELB"
+      },
+      "CreationPolicy": {
+        "ResourceSignal": {
+          "Count": 1,
+          "Timeout": "PT10M"
+        }
+      },
+      "UpdatePolicy": {
+        "AutoScalingRollingUpdate": {
+          "MaxBatchSize": "2",
+          "MinInstancesInService": "1",
+          "PauseTime": "PT10M",
+          "SuspendProcesses": ["AlarmNotification"],
+          "WaitOnResourceSignals": true
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "ELB": {
+      "Value": {"Fn::Join": ["", ["http://", {"Fn::GetAtt": ["ELB", "DNSName"]}]]},
+      "Description": "Load Balancer URL"
+    }
+  }
+}
