@@ -37,7 +37,6 @@ ab -n 1000 -c 4 $URL
 1. Skip next step by clicking on **Next** button.
 1. Review your input and click **Create** button.
 1. Wait until your stack reaches status **CREATE_COMPLETE**.
-1. Nice-To-Have Task: Try to find your EC2 instance and open the logs containing the output from the load test.
 1. Select your stack by clicking on row of the table.
 1. Select **Delete Stack** from the **Actions** menu.
 1. Confirm the deletion of your stack.
