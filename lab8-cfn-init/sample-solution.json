@@ -1,6 +1,6 @@
 {
 	"AWSTemplateFormatVersion": "2010-09-09",
-	"Description": "Hello World! example",
+	"Description": "Lab 8: cfn-init",
 	"Parameters": {
 		"VPC": {
 			"Description": "The default VPC",
@@ -61,7 +61,7 @@
 				}],
 				"Tags": [{
 					"Key": "Name",
-					"Value": "hello-world"
+					"Value": "lab8-webserver"
 				}],
 				"UserData": {"Fn::Base64": {"Fn::Join": ["", [
 					"#!/bin/bash -ex\n",
@@ -72,7 +72,7 @@
 		"WebserverSecurityGroup": {
 			"Type": "AWS::EC2::SecurityGroup",
 			"Properties": {
-				"GroupDescription": "hello-world-webserver",
+				"GroupDescription": "lab8-webserver",
 				"VpcId": {"Ref": "VPC"},
 				"SecurityGroupIngress": [{
 					"CidrIp": "0.0.0.0/0",
@@ -84,8 +84,8 @@
 		}
 	},
 	"Outputs": {
-		"HelloWorldURL": {
-			"Description": "The URL pointing to Hello World!.",
+		"WebsiteURL": {
+			"Description": "The URL pointing the webserver.",
 			"Value": {"Fn::Join": ["", ["http://", {"Fn::GetAtt": ["EC2Instance", "PublicDnsName"]}]]}
 		}
 	}
