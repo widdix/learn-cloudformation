@@ -1,9 +1,9 @@
-# Lab 4: Outpus
+# Lab 4: Outputs
 
 Use outputs to get access to informations about the resources created by a stack.
 
 ## Overview
-1. Create a CloudFormation template using outpus.
+1. Create a CloudFormation template using outputs.
 1. Create a CloudFormation stack based on your template.
 
 ## Instructions

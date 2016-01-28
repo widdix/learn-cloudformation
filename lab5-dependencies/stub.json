@@ -27,9 +27,19 @@
 		}
 	},
 	"Resources": {
-		// TODO 
-		// add security group
-		// allowing access to port 22 (TCP) from 0.0.0.0/0
+		"SecurityGroup": {
+			"Type": "AWS::EC2::SecurityGroup",
+			"Properties": {
+				"GroupDescription": "allow-ssh",
+				"VpcId": {"Ref": "VPC"},
+				"SecurityGroupIngress": [{
+					"CidrIp": "0.0.0.0/0",
+					"FromPort": 22,
+					"IpProtocol": "tcp",
+					"ToPort": 22
+				}]
+			}
+		},
 		"EC2Instance": {
 			"Type": "AWS::EC2::Instance",
 			"Properties": {
@@ -48,7 +58,9 @@
 					"ab -n 1000 -c 4 ", {"Ref": "URL"}, "\n"
 				]]}},
 				"KeyName": {"Ref": "KeyName"},
-				"SecurityGroupIds": [{"Ref": "SecurityGroup"}]
+				"SecurityGroupIds": [
+					// TODO reference SecurityGroup 
+				]
 			}
 		}
 	},
