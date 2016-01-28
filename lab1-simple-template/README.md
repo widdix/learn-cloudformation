@@ -10,10 +10,10 @@ Create a S3 bucket with the help of CloudFormation.
 
 ## Create a template
 1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
-1. Add an ``AWSTemplateFormatVersion`` definition to your template (see [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html](Template anatomy)).
-1. Add a ``Description`` to your template (see [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html](Template anatomy)).
-1. Add a ``Resources`` section to your template (see [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html](Template anatomy)).
-1. Add a **S3 bucket** to the ``Resources`` section of your template (see [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html](Resource Type: S3 bucket)).
+1. Add an ``AWSTemplateFormatVersion`` definition to your template (see [Template anatomy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)).
+1. Add a ``Description`` to your template (see [Template anatomy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)).
+1. Add a ``Resources`` section to your template (see [Template anatomy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)).
+1. Add a **S3 bucket** to the ``Resources`` section of your template (see [Resource Type: S3 bucket](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html)).
 1. Add ``BucketName`` as the only property to the ``Properties`` section of the S3 bucket.
 
 ## Create a stack based on the template
@@ -33,8 +33,8 @@ Create a S3 bucket with the help of CloudFormation.
 1. Congratulations! You are done with the lab!
 
 ## Documentation
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html](Template anatomy)
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html](Resource Type: S3 bucket)
+[Template anatomy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)
+[Resource Type: S3 bucket](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html)
 
 ## Sample solution
 This lab includes a sample solution ``sample-solution.json``. Use it if you are stuck during the creation of your template of if you want to review your results.
