@@ -1,0 +1,2 @@
+/opt/aws/bin/cfn-signal -e 0 --region eu-west-1 
+	--stack test --resource AutoScalingGroup

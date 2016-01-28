@@ -1,0 +1,10 @@
+"AutoScalingGroup": {
+	"Type": "AWS::AutoScaling::AutoScalingGroup",
+	"Properties": {},
+	"CreationPolicy": {
+		"ResourceSignal": {
+			"Count": 1,
+			"Timeout": "PT10M"
+		}
+	}
+}
