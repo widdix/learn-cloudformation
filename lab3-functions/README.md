@@ -10,7 +10,7 @@ Use input parameters to be able to re-use CloudFormation templates-
 
 ## Create a template
 1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
-1. Use functions ``Fn::Base64`` and ``Fn::Join`` to combine the following Bash script injected into the EC2 instance with the help of ``UserData``. $URL needs to be replaced with the template parameter named ``URL`` (see [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html](Build-in functions)).
+1. Use functions ``Fn::Base64`` and ``Fn::Join`` to combine the following Bash script injected into the EC2 instance with the help of ``UserData``. $URL needs to be replaced with the template parameter named ``URL`` (see [Build-in functions](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html)).
 
 
 Bash script installing httpd-tools and running a small HTTP load test.
@@ -43,7 +43,7 @@ ab -n 1000 -c 4 $URL
 1. Congratulations! You are done with the lab!
 
 ## Documentation
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html](Build-in functions)
+[Build-in functions](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html)
 
 ## Sample solution
 This lab includes a sample solution ``sample-solution.json``. Use it if you are stuck during the creation of your template of if you want to review your results.

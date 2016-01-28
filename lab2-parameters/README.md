@@ -10,9 +10,9 @@ Use input parameters to be able to re-use CloudFormation templates-
 
 ## Create a template
 1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
-1. Add a parameter called ``ImageID`` of type ``String`` to the ``Parameters`` section (see [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html](Parameters section)).
-1. Add a parameter called ``InstanceType`` of type ``String`` to the ``Parameters`` section (see [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html](Parameters section)).
-1. Add a parameter called ``SubnetId`` of type ``AWS::EC2::Subnet::Id`` to the ``Parameters`` section (see [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html](Parameters section)).
+1. Add a parameter called ``ImageID`` of type ``String`` to the ``Parameters`` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
+1. Add a parameter called ``InstanceType`` of type ``String`` to the ``Parameters`` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
+1. Add a parameter called ``SubnetId`` of type ``AWS::EC2::Subnet::Id`` to the ``Parameters`` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
 
 
 ## Create a stack based on the template
@@ -35,8 +35,8 @@ Use input parameters to be able to re-use CloudFormation templates-
 1. Congratulations! You are done with the lab!
 
 ## Documentation
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html](Template anatomy)
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html](Resource Type: EC2 instance)
+* [Template anatomy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)
+* [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)
 
 ## Sample solution
 This lab includes a sample solution ``sample-solution.json``. Use it if you are stuck during the creation of your template of if you want to review your results.
