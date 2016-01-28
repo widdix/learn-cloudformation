@@ -5,7 +5,9 @@
 		"S3Bucket": {
 			"Type" : "AWS::S3::Bucket",
 			"Properties": {
-				"BucketName": "learn-cloudformation-$username"
+				"WebsiteConfiguration": {
+					"IndexDocument" : "index.html"
+				}
 			}
 		}
 	}

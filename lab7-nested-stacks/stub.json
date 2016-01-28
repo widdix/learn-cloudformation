@@ -22,8 +22,8 @@
 	},
 	"Resources": {
 		// add stacks
-		// https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab6-mappings/sample-solution.json
-		// https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab1-simple-template/sample-solution.json
+		// https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/ec2-stack.json
+		// https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/s3-stack.json
 
 	},
 	"Outputs": {

@@ -10,8 +10,8 @@ Making use of nested stacks. Use modules trying to avoid complex and large templ
 
 ## Create a template
 1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
-1. Add a resource to create a child stack based on ``https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab6-mappings/sample-solution.json`` (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
-1. Add a resource to create a child stack based on ``https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab1-simple-template/sample-solution.json`` (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
+1. Add a resource to create a child stack based on ``https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/ec2-stack.json`` (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
+1. Add a resource to create a child stack based on ``https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/s3-stack.json`` (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
 1. Forward parameters from parent template to ``lab6-mappings/sample-solution.json`` stack.
 1. Add outputs referencing outputs from ``lab6-mappings/sample-solution.json`` stack (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
 
