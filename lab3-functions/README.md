@@ -16,7 +16,7 @@ Use input parameters to be able to re-use CloudFormation templates-
 Bash script installing httpd-tools and running a small HTTP load test.
 
 ```
-!/bin/bash -ex
+#!/bin/bash -ex
 yum install -y httpd-tools
 ab -n 1000 -c 4 $URL
 ```
