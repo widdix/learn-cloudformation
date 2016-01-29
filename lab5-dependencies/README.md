@@ -11,6 +11,7 @@ CloudFormation detects dependencies between resources and creates, updates, or d
 ## Create a template
 1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Add a reference to ``SecurityGroup`` to the list of ``SecurityGroupIds`` of the EC2 instance (see [Reference function](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)).
+1. Add a reference to ``KeyName`` (parameter) to the ``KeyName``of the EC2 instance (see [Reference function](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)).
 
 ## Create a stack based on the template
 1. Open [CloudFormation](https://console.aws.amazon.com/cloudformation) in AWS Management Console.
@@ -18,7 +19,7 @@ CloudFormation detects dependencies between resources and creates, updates, or d
 1. Select **Upload a template to Amazon S3**.
 1. Choose the template file you created for this lab.
 1. Click **Next** button.
-1. Insert ``lab5-$username``as stack name. Replace ``$username``with your username (e.g. lab2-awittig).
+1. Insert ``lab5-$username``as stack name. Replace ``$username``with your username (e.g. lab5-awittig).
 1. Select a random subnet as parameter for **Subnet**.
 1. Select a random key as parameter for **Key Pair**.
 1. Insert ``t2.micro`` as parameter for **InstanceType**.

@@ -11,7 +11,8 @@ Mappings are mapping a key to a set of values. Typical use case: defining a mapp
 ## Create a template
 1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Add a mappings section to your template (see [Mappings section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html)).
-1. Add a mapping named ``RegionAMIMap``. The mapping should contain a region id as key, ``AmazonLinux`` as name and the AMI id as value per region (see [Mappings section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html)).
+1. Add a mapping named ``RegionAMIMap``. The mapping should contain a region id as key, ``AmazonLinux`` as name and the AMI id as value per region (see [Mappings section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html))).
+1. Use the mapping ``RegionAMIMap`` to define the AMI for the EC2 instance (see [Mappings section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html)) and [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html).
 
 ###AMIs per region
 ap-northeast-1 => ami-cbf90ecb
@@ -30,7 +31,7 @@ us-west-2 => ami-e7527ed7
 1. Select **Upload a template to Amazon S3**.
 1. Choose the template file you created for this lab.
 1. Click **Next** button.
-1. Insert ``lab6-$username``as stack name. Replace ``$username``with your username (e.g. lab2-awittig).
+1. Insert ``lab6-$username``as stack name. Replace ``$username``with your username (e.g. lab6-awittig).
 1. Select a random subnet as parameter for **Subnet**.
 1. Select a random key as parameter for **Key Pair**.
 1. Insert ``t2.micro`` as parameter for **InstanceType**.

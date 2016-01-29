@@ -24,4 +24,4 @@ Create a CloudFormation stack based on an existing template.
 1. Select your stack by clicking on row of the table again.
 1. Select **Delete Stack** from the **Actions** menu.
 1. Confirm the deletion of your stack.
-1. Congratulations! You are done with the first lab!
+1. Congratulations! You are done with the lab!

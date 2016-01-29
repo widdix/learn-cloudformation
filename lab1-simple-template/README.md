@@ -14,7 +14,7 @@ Create a S3 bucket with the help of CloudFormation.
 1. Add a ``Description`` to your template (see [Template anatomy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)).
 1. Add a ``Resources`` section to your template (see [Template anatomy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)).
 1. Add a **S3 bucket** to the ``Resources`` section of your template (see [Resource Type: S3 bucket](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html)).
-1. Add ``BucketName`` as the only property to the ``Properties`` section of the S3 bucket.
+1. Add ``BucketName`` as the only property to the ``Properties`` section of the S3 bucket. Be careful: bucket name has to be globally unique. Try ``learn-cloudformation-$username`` replace ``$username`` with your username.
 
 ## Create a stack based on the template
 1. Open [CloudFormation](https://console.aws.amazon.com/cloudformation) in AWS Management Console.
@@ -22,7 +22,7 @@ Create a S3 bucket with the help of CloudFormation.
 1. Select **Upload a template to Amazon S3**.
 1. Choose the template file you created for this lab.
 1. Click **Next** button.
-1. Insert ``lab1-$username``as stack name. Replace ``$username``with your username (e.g. awittig).
+1. Insert ``lab1-$username`` as stack name. Replace ``$username``with your username (e.g. lab1-awittig).
 1. Click **Next** button.
 1. Skip next step by clicking on **Next** button.
 1. Review your input and click **Create** button.

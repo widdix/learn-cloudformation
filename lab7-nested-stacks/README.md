@@ -12,8 +12,8 @@ Making use of nested stacks. Use modules trying to avoid complex and large templ
 1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Add a resource to create a child stack based on ``https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/ec2-stack.json`` (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
 1. Add a resource to create a child stack based on ``https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/s3-stack.json`` (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
-1. Forward parameters from parent template to ``lab6-mappings/sample-solution.json`` stack.
-1. Add outputs referencing outputs from ``lab6-mappings/sample-solution.json`` stack (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
+1. Forward parameters from parent template to ``ec2-stack`` stack.
+1. Add outputs referencing outputs from ``ec2-stack`` stack (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
 
 
 ## Create a stack based on the template
@@ -22,7 +22,7 @@ Making use of nested stacks. Use modules trying to avoid complex and large templ
 1. Select **Upload a template to Amazon S3**.
 1. Choose the template file you created for this lab.
 1. Click **Next** button.
-1. Insert ``lab7-$username``as stack name. Replace ``$username``with your username (e.g. lab2-awittig).
+1. Insert ``lab7-$username``as stack name. Replace ``$username``with your username (e.g. lab7-awittig).
 1. Select a random subnet as parameter for **Subnet**.
 1. Select a random key as parameter for **Key Pair**.
 1. Insert ``t2.micro`` as parameter for **InstanceType**.

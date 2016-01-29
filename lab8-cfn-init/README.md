@@ -10,9 +10,9 @@ Making use of cfn-init to provision EC2 instances.
 
 ## Create a template
 1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
-1. Install ``httpd`` with the help of cfn-init by adding meta-data to ``EC2Instance`` (see [Resource Type: CloudFormation Init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html)).
-1. Create a file ``/var/www/html/index.html`` with some sample content by adding meta-data to ``EC2Instance`` (see [Resource Type: CloudFormation Init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html)).
-1. Start ``httpd`` with the help of cfn-init by adding meta-data to ``EC2Instance`` (see [Resource Type: CloudFormation Init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html)).
+1. Install ``httpd`` with the help of cfn-init by adding metadata to ``EC2Instance`` (see [Resource Type: CloudFormation Init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html)).
+1. Create a file ``/var/www/html/index.html`` with ``<html><body>Hello World!</body></html>`` as content by adding metadata to ``EC2Instance`` (see [Resource Type: CloudFormation Init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html)).
+1. Start ``httpd`` with the help of cfn-init by adding metadata to ``EC2Instance`` (see [Resource Type: CloudFormation Init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html)).
 
 
 ## Create a stack based on the template
@@ -21,7 +21,7 @@ Making use of cfn-init to provision EC2 instances.
 1. Select **Upload a template to Amazon S3**.
 1. Choose the template file you created for this lab.
 1. Click **Next** button.
-1. Insert ``lab8-$username``as stack name. Replace ``$username``with your username (e.g. lab0-awittig).
+1. Insert ``lab8-$username``as stack name. Replace ``$username``with your username (e.g. lab8-awittig).
 1. Select a random subnet and the only available VPC as **Parameters**.
 1. Click **Next** button.
 1. Skip next step by clicking on **Next** button.

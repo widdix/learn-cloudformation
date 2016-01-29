@@ -11,7 +11,7 @@ Use outputs to get access to informations about the resources created by a stack
 ## Create a template
 1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Add ``InstanceId`` containing the instance-id of the EC2 instance to the outputs section (see [Outputs section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html)).
-1. Add ``PublicIPAddress`` containing the public IP address of the EC2 instance to the outputs section: [Outputs section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) and [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html).
+1. Add ``PublicIPAddress`` containing the public IP address of the EC2 instance to the outputs section: [Outputs section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) and [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)).
 
 ## Create a stack based on the template
 1. Open [CloudFormation](https://console.aws.amazon.com/cloudformation) in AWS Management Console.
@@ -19,7 +19,7 @@ Use outputs to get access to informations about the resources created by a stack
 1. Select **Upload a template to Amazon S3**.
 1. Choose the template file you created for this lab.
 1. Click **Next** button.
-1. Insert ``lab4-$username``as stack name. Replace ``$username``with your username (e.g. lab2-awittig).
+1. Insert ``lab4-$username``as stack name. Replace ``$username``with your username (e.g. lab4-awittig).
 1. Select a random subnet as parameter for **Subnet**.
 1. Insert ``t2.micro`` as parameter for **InstanceType**.
 1. Insert ``ami-bff32ccc`` (eu-west-1) or ``ami-bc5b48d0``(eu-central-1) as parameter for **AMI**.
