@@ -22,7 +22,6 @@ CloudFormation detects dependencies between resources and creates, updates, or d
 1. Insert ``lab5-$username``as stack name. Replace ``$username``with your username (e.g. lab5-awittig).
 1. Select a random subnet as parameter for **Subnet**.
 1. Select a random key as parameter for **Key Pair**.
-1. Insert ``t2.micro`` as parameter for **InstanceType**.
 1. Insert ``ami-bff32ccc`` (eu-west-1) or ``ami-bc5b48d0``(eu-central-1) as parameter for **AMI**.
 1. Insert ``http://widdix.net/`` or a website you own for **URL**.
 1. Click **Next** button.
