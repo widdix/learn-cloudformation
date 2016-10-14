@@ -1,14 +1,10 @@
 # learn-cloudformation
 
-Labs helping you to dive into CloudFormation. Start from ``stubs`` have a look at ``solutions`` or ask your instructor if you need help.
+Labs helping you to learn AWS CloudFormation within a day.
 
-## Resources
-http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
+## Setup
+Clone this repository on your local machine.
 
-http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
+``git clone https://github.com/widdix/learn-cloudformation.git``
 
-http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html 
-
-
-## Highlight
-highlight -S js -O rtf --style night --font-size 30 presentations/7-nested.json | pbcopy 
+Open the AWS Management Console of an empty AWS account.

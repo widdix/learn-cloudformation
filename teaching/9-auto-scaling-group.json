@@ -1,0 +1,9 @@
+"AutoScalingGroup": {
+	"Type": "AWS::AutoScaling::AutoScalingGroup",
+	"Properties": {
+		"MinSize": "1",
+		"MaxSize": "2",
+		"DesiredCapacity": "1",
+		"LaunchConfigurationName": "..."
+	}
+}

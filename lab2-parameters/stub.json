@@ -3,9 +3,9 @@
 	"Description": "EC2 instance with parameters",
 	"Parameters": {
 		// TODO add parameters
-		// ImageID: String
+		// AMI: String
 		// InstanceType: String
-		// SubnetId: Subnet-ID (AWS resource type)
+		// Subnet: Subnet-ID (AWS resource type)
 	},
 	"Resources": {
 		"EC2Instance": {

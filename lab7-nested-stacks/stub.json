@@ -21,13 +21,13 @@
 		}
 	},
 	"Resources": {
-		// add stacks (S3 and EC2)
-		// https://s3-eu-west-1.amazonaws.com/learn-cloudformation/solutions/6-mappings.json
-		// https://s3-eu-west-1.amazonaws.com/learn-cloudformation/solutions/1-simple.json
+		// add stacks
+		// https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/ec2-stack.json
+		// https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/s3-stack.json
 
 	},
 	"Outputs": {
 		// TODO add outputs
-		// from stack EC2 (instance id and public IP address)
+		// from stack lab6-mappings (instance id and public IP address)
 	}
 }
