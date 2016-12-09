@@ -38,7 +38,10 @@
 			"Type" : "AWS::CloudFormation::Stack",
 			"Properties" : {
 				"TemplateURL" : "https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/s3-stack.json",
-				"TimeoutInMinutes" : "2"
+				"TimeoutInMinutes" : "2",
+				"Parameters": {
+					"InstanceId": {"Fn::GetAtt" : ["EC2Stack", "Outputs.InstanceId"]}
+				}
 			}
 		}
 	},
