@@ -1,0 +1,1 @@
+!FindInMap [RegionAMIMap, !Ref 'AWS::Region', AmazonLinux]

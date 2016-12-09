@@ -1,0 +1,24 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 instance with functions
+Parameters:
+  KeyName:
+    Description: Key Pair name
+    Type: AWS::EC2::KeyPair::KeyName
+  VPC:
+    Description: VPC to launch virtual server in
+    Type: AWS::EC2::VPC::Id
+  Subnet:
+    Description: subnet to launch virtual server in
+    Type: AWS::EC2::Subnet::Id
+  URL:
+    Description: URL for load testing
+    Type: String
+    Default: http://widdix.net/
+Resources:
+  # add stacks
+	# https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/ec2-stack.json
+	# https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/s3-stack.json
+Outputs:
+  # TODO add outputs
+	# from stack lab6-mappings (instance id and public IP address)

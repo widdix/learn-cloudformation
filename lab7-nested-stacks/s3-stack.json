@@ -1,6 +1,12 @@
 {
 	"AWSTemplateFormatVersion": "2010-09-09",
 	"Description": "Simple S3 bucket",
+	"Parameters": {
+		"InstanceId": {
+			"Description": "EC2 Instance Id",
+			"Type": "String"
+		}
+	},
 	"Resources": {
 		"S3Bucket": {
 			"Type" : "AWS::S3::Bucket",

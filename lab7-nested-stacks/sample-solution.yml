@@ -1,0 +1,42 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 instance with functions
+Parameters:
+  KeyName:
+    Description: Key Pair name
+    Type: AWS::EC2::KeyPair::KeyName
+  VPC:
+    Description: VPC to launch virtual server in
+    Type: AWS::EC2::VPC::Id
+  Subnet:
+    Description: subnet to launch virtual server in
+    Type: AWS::EC2::Subnet::Id
+  URL:
+    Description: URL for load testing
+    Type: String
+    Default: http://widdix.net/
+Resources:
+  EC2Stack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      Parameters:
+        KeyName: !Ref KeyName
+        VPC: !Ref VPC
+        Subnet: !Ref Subnet
+        URL: !Ref URL
+      TemplateURL: https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/ec2-stack.json
+      TimeoutInMinutes: '5'
+  S3Stack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/s3-stack.json
+      TimeoutInMinutes: '2'
+      Parameters:
+        InstanceId: !Sub ${EC2Stack.Outputs.InstanceId}
+Outputs:
+  InstanceId:
+    Value: !Sub ${EC2Stack.Outputs.InstanceId}
+    Description: ID of virtual server
+  PublicIPAddress:
+    Value: !Sub ${EC2Stack.Outputs.PublicIPAddress}
+    Description: public IP address of virtual server

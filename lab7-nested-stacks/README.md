@@ -12,6 +12,7 @@ Making use of nested stacks. Use modules trying to avoid complex and large templ
 1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Add a resource to create a child stack based on ``https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/ec2-stack.json`` (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
 1. Add a resource to create a child stack based on ``https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/s3-stack.json`` (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
+1. Handover parameter `InstanceId` from EC2 stack.
 1. Forward all parameters from parent template to ``ec2-stack`` stack.
 1. Add outputs referencing outputs from ``ec2-stack`` stack (see [Resource Type: CloudFormation Stack](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html)).
 
