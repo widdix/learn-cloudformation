@@ -1,0 +1,38 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 instance with functions
+Parameters:
+  AMI:
+    Description: AMI to start virtual server
+    Type: String
+    MaxLength: 12
+    MinLength: 12
+  InstanceType:
+    Description: instance type of virtual server
+    Type: String
+    AllowedValues:
+    - t2.micro
+    - t2.small
+    - t2.medium
+  Subnet:
+    Description: subnet to launch virtual server in
+    Type: AWS::EC2::Subnet::Id
+  URL:
+    Description: URL for load testing
+    Type: String
+    Default: http://widdix.net/
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref AMI
+      InstanceType: !Ref InstanceType
+      SubnetId: !Ref Subnet
+      Tags:
+      - Key: Name
+        Value: learn-cloudformation-3-functions
+      UserData:
+        'Fn::Base64': !Sub |
+          #!/bin/bash -ex
+          yum install -y httpd-tools
+          ab -n 1000 -c 4 ${URL}

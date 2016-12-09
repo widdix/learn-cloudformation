@@ -2,7 +2,7 @@
 	"Parameters": {
 		"AMI": {
 			"Description": "AMI to start virtual server",
-			"Type": "String",
+			"Type": "String"
 		}
 	},
 	"Resources": {

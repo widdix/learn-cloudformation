@@ -1,0 +1,10 @@
+Parameters:
+  AMI:
+    Description: AMI to start virtual server
+    Type: String
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId:
+        Ref: AMI

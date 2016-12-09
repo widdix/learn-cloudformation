@@ -1,0 +1,7 @@
+Outputs:
+  InstanceId:
+    Value: !Ref EC2Instance
+    Description: ID of virtual server
+  PublicIPAddress:
+    Value: !Sub ${EC2Instance.PublicIp}
+    Description: public IP address of virtual server

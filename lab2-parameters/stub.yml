@@ -1,0 +1,21 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 instance with parameters
+Parameters:
+  # TODO add parameters
+  # AMI: String
+  # InstanceType: String
+  # Subnet: Subnet-ID (AWS resource type) 
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId:
+        Ref: AMI
+      InstanceType:
+        Ref: InstanceType
+      SubnetId:
+        Ref: Subnet
+      Tags:
+      - Key: Name
+        Value: learn-cloudformation-2-parameters

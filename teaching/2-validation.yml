@@ -1,0 +1,13 @@
+Parameters:
+  AMI:
+    Description: AMI to start virtual server
+    Type: String
+    MaxLength: 12
+    MinLength: 12
+  InstanceType:
+    Description: instance type of virtual server
+    Type: String
+    AllowedValues:
+    - t2.micro
+    - t2.small
+    - t2.medium

@@ -1,0 +1,10 @@
+WebServerSecurityGroup:
+  Type: AWS::EC2::SecurityGroup
+  Properties:
+    GroupDescription: web server
+    VpcId: [...]
+    SecurityGroupIngress:
+    - CidrIp: 0.0.0.0/0
+      FromPort: 80
+      IpProtocol: tcp
+      ToPort: 80

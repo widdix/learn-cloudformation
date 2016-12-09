@@ -1,0 +1,7 @@
+Parameters:
+  Environment:
+    Description: name of environment
+    Type: String
+  Subnet:
+    Description: subnet to launch virtual server in
+    Type: AWS::EC2::Subnet::Id

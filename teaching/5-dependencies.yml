@@ -1,0 +1,11 @@
+SecurityGroup:
+  Type: AWS::EC2::SecurityGroup
+  Properties:
+    GroupDescription: allow-ssh
+    VpcId: !Ref VPC
+EC2Instance:
+  Type: AWS::EC2::Instance
+  Properties:
+    InstanceType: t2.micro
+    SecurityGroupIds:
+    - !Ref SecurityGroup
