@@ -9,7 +9,7 @@ Use outputs to get access to informations about the resources created by a stack
 ## Instructions
 
 ## Create a template
-1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
+1. Open ``stub.yaml`` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Add ``InstanceId`` containing the instance-id of the EC2 instance to the outputs section (see [Outputs section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) and [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)).
 1. Add ``PublicIPAddress`` containing the public IP address of the EC2 instance to the outputs section: [Outputs section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) and [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)).
 
@@ -47,4 +47,4 @@ Use outputs to get access to informations about the resources created by a stack
 * [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)
 
 ## Sample solution
-This lab includes a sample solution ``sample-solution.json``. Use it if you are stuck during the creation of your template of if you want to review your results.
+This lab includes a sample solution ``sample-solution.yaml``. Use it if you are stuck during the creation of your template of if you want to review your results.

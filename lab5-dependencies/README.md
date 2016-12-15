@@ -9,7 +9,7 @@ CloudFormation detects dependencies between resources and creates, updates, or d
 ## Instructions
 
 ## Create a template
-1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
+1. Open ``stub.yaml`` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Add a reference to ``SecurityGroup`` to the list of ``SecurityGroupIds`` of the EC2 instance (see [Reference function](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)).
 1. Add a reference to ``KeyName`` (parameter) to the ``KeyName``of the EC2 instance (see [Reference function](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)).
 
@@ -45,4 +45,4 @@ CloudFormation detects dependencies between resources and creates, updates, or d
 * [Reference function](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)
 
 ## Sample solution
-This lab includes a sample solution ``sample-solution.json``. Use it if you are stuck during the creation of your template of if you want to review your results.
+This lab includes a sample solution ``sample-solution.yaml``. Use it if you are stuck during the creation of your template of if you want to review your results.

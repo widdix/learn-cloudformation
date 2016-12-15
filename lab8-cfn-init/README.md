@@ -9,7 +9,7 @@ Making use of cfn-init to provision EC2 instances.
 ## Instructions
 
 ## Create a template
-1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
+1. Open ``stub.yaml`` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Install ``httpd`` with the help of cfn-init by adding metadata to ``EC2Instance`` (see [Resource Type: CloudFormation Init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html)).
 1. Create a file ``/var/www/html/index.html`` with ``<html><body>Hello World!</body></html>`` as content by adding metadata to ``EC2Instance`` (see [Resource Type: CloudFormation Init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html)).
 1. Start ``httpd`` with the help of cfn-init by adding metadata to ``EC2Instance`` (see [Resource Type: CloudFormation Init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html)).
@@ -40,4 +40,4 @@ Making use of cfn-init to provision EC2 instances.
 * [Resource Type: CloudFormation Init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html)
 
 ## Sample solution
-This lab includes a sample solution ``sample-solution.json``. Use it if you are stuck during the creation of your template of if you want to review your results.
+This lab includes a sample solution ``sample-solution.yaml``. Use it if you are stuck during the creation of your template of if you want to review your results.

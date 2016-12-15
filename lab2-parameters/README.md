@@ -9,7 +9,7 @@ Use input parameters to be able to re-use CloudFormation templates-
 ## Instructions
 
 ## Create a template
-1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
+1. Open ``stub.yaml`` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Add a parameter called ``AMI`` of type ``String`` to the ``Parameters`` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
 1. Add a parameter called ``InstanceType`` of type ``String`` to the ``Parameters`` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
 1. Add a parameter called ``Subnet`` of type ``AWS::EC2::Subnet::Id`` to the ``Parameters`` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
@@ -39,4 +39,4 @@ Use input parameters to be able to re-use CloudFormation templates-
 * [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)
 
 ## Sample solution
-This lab includes a sample solution ``sample-solution.json``. Use it if you are stuck during the creation of your template of if you want to review your results.
+This lab includes a sample solution ``sample-solution.yaml``. Use it if you are stuck during the creation of your template of if you want to review your results.

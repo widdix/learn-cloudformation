@@ -9,7 +9,7 @@ Create a CloudFormation stack and use Rolling Updates to update the application 
 1. Open [CloudFormation](https://console.aws.amazon.com/cloudformation) in AWS Management Console.
 1. Click **Create Stack** button.
 1. Select **Upload a template to Amazon S3**.
-1. Choose file ``learn-cloudformation/lab9-rolling-update/demo.json``.
+1. Choose file ``learn-cloudformation/lab9-rolling-update/demo.yaml``.
 1. Click **Next** button.
 1. Insert ``lab9-$username``as stack name. Replace ``$username``with your username (e.g. lab9-awittig).
 1. Select two random subnets and the only available VPC as **Parameters**.

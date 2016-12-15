@@ -9,7 +9,7 @@ Mappings are mapping a key to a set of values. Typical use case: defining a mapp
 ## Instructions
 
 ## Create a template
-1. Open ``stub.json`` with an editor of your choice. The stub file contains a skeleton to start from.
+1. Open ``stub.yaml`` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Add a mappings section to your template (see [Mappings section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html)).
 1. Add a mapping named ``RegionAMIMap``. The mapping should contain a region id as key, ``AmazonLinux`` as name and the AMI id as value per region (see [Mappings section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html))).
 1. Use the mapping ``RegionAMIMap`` to define the AMI for the EC2 instance (see [Mappings section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html)) and [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html).
@@ -49,4 +49,4 @@ us-west-2 => ami-e7527ed7
 * [Mappings section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html)
 
 ## Sample solution
-This lab includes a sample solution ``sample-solution.json``. Use it if you are stuck during the creation of your template of if you want to review your results.
+This lab includes a sample solution ``sample-solution.yaml``. Use it if you are stuck during the creation of your template of if you want to review your results.

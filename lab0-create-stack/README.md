@@ -9,7 +9,7 @@ Create a CloudFormation stack based on an existing template.
 1. Open [CloudFormation](https://console.aws.amazon.com/cloudformation) in AWS Management Console.
 1. Click **Create Stack** button.
 1. Select **Upload a template to Amazon S3**.
-1. Choose file ``learn-cloudformation/lab0-create-stack/demo.json``.
+1. Choose file ``learn-cloudformation/lab0-create-stack/demo.yaml``.
 1. Click **Next** button.
 1. Insert ``lab0-$username``as stack name. Replace ``$username``with your username (e.g. lab0-awittig).
 1. Select a random subnet and the only available VPC as **Parameters**.
