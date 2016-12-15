@@ -6,5 +6,4 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId:
-        Ref: AMI
+      ImageId: !Ref AMI

@@ -1,0 +1,9 @@
+AWS::CloudFormation::Init:
+  config:
+    packages:
+      yum:
+        httpd: []
+    files:
+      "/var/www/html/index.html":
+        content: "<html><body>Hello World!</body></html>"
+        mode: '000644'
