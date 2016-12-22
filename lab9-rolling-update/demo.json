@@ -12,7 +12,8 @@
     },
     "VersionParameter": {
       "Description": "Software version to deploy",
-      "Type": "String"
+      "Type": "String",
+      "Default": "1"
     }
   },
   "Mappings": {
@@ -107,7 +108,7 @@
           "#!/bin/bash -ex", "\n",
           "yum -y install httpd", "\n",
           "chkconfig httpd on", "\n",
-          "echo \"Version ", {"Ref": "VersionParameter"}, "\" >> /var/www/html/index.html", "\n",
+          {"Fn::Sub": "echo \"<!DOCTYPE html><html><head><title>Version ${VersionParameter}</title><meta http-equiv=\\\"refresh\\\" content=\\\"3\\\"></head><body>Version ${VersionParameter}</body></html>\" >> /var/www/html/index.html"}, "\n",
           "service httpd start", "\n",
           "/opt/aws/bin/cfn-signal -e 0 --region ", {"Ref": "AWS::Region"}, " --stack ", {"Ref": "AWS::StackName"}, " --resource AutoScalingGroup", "\n"
         ]]}}
