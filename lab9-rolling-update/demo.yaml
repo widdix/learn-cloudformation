@@ -11,6 +11,7 @@ Parameters:
   VersionParameter:
     Description: Software version to deploy
     Type: String
+    Default: 1
 Mappings:
   RegionMap:
     eu-west-1:
@@ -101,7 +102,7 @@ Resources:
             #!/bin/bash -ex
             yum -y install httpd
             chkconfig httpd on
-            echo "Version ${VersionParameter}" >> /var/www/html/index.html
+            echo "<!DOCTYPE html><html><head><title>Version ${VersionParameter}</title><meta http-equiv=\"refresh\" content=\"3\"></head><body>Version ${VersionParameter}</body></html>" >> /var/www/html/index.html
             service httpd start
             /opt/aws/bin/cfn-signal -e 0 --region ${AWS::Region} --stack ${AWS::StackName} --resource AutoScalingGroup
   AutoScalingGroup:
