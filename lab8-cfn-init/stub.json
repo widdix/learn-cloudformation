@@ -79,7 +79,7 @@
 	"Outputs": {
 		"WebsiteURL": {
 			"Description": "The URL pointing the webserver.",
-			"Value": {"Fn::Join": ["", ["http://", {"Fn::GetAtt": ["EC2Instance", "PublicDnsName"]}]]}
+			"Value": {"Fn::Join": ["", ["http://", {"Fn::GetAtt": ["EC2Instance", "PublicIp"]}]]}
 		}
 	}
 }

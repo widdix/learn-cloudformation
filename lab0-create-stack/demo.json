@@ -67,7 +67,7 @@
 	"Outputs": {
 		"HelloWorldURL": {
 			"Description": "The URL pointing to Hello World!.",
-			"Value": {"Fn::Join": ["", ["http://", {"Fn::GetAtt": ["EC2Instance", "PublicDnsName"]}]]}
+			"Value": {"Fn::Join": ["", ["http://", {"Fn::GetAtt": ["EC2Instance", "PublicIp"]}]]}
 		}
 	}
 }

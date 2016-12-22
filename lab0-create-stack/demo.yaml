@@ -66,4 +66,4 @@ Resources:
 Outputs:
   HelloWorldURL:
     Description: The URL pointing to Hello World!.
-    Value: !Sub 'http://${EC2Instance.PublicDnsName}'
+    Value: !Sub 'http://${EC2Instance.PublicIp}'

@@ -79,4 +79,4 @@ Resources:
 Outputs:
   WebsiteURL:
     Description: The URL pointing the webserver.
-    Value: !Sub http://${EC2Instance.PublicDnsName}
+    Value: !Sub http://${EC2Instance.PublicIp}
