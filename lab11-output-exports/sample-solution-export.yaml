@@ -1,0 +1,38 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Outputs VPC, subnet, and security group information
+Parameters:
+  VPC:
+    Description: VPC to launch virtual server in
+    Type: AWS::EC2::VPC::Id
+  Subnet:
+    Description: subnet to launch virtual server in
+    Type: AWS::EC2::Subnet::Id
+Resources:
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: lab11
+      VpcId:
+        Ref: VPC
+      SecurityGroupIngress:
+      - CidrIp: 0.0.0.0/0
+        FromPort: 80
+        IpProtocol: tcp
+        ToPort: 80
+Outputs:
+  VPC:
+    Value: !Ref VPC
+    Description: ID of VPC
+    Export:
+      Name: !Sub ${AWS::StackName}-VPC
+  Subnet:
+    Value: !Ref Subnet
+    Description: ID of subnet
+    Export:
+      Name: !Sub ${AWS::StackName}-Subnet
+  SecurityGroup:
+    Value: !Ref SecurityGroup
+    Description: ID of security group
+    Export:
+      Name: !Sub ${AWS::StackName}-SecurityGroup

@@ -1,0 +1,54 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Hello World! example
+Parameters:
+  # TODO you exported the values prefixed with the name of the exporting stack.
+  # Use a parameter to pass the stack name to this template.
+Mappings:
+  RegionMap:
+    eu-west-1:
+      AMI: ami-bff32ccc
+    ap-southeast-1:
+      AMI: ami-c9b572aa
+    ap-southeast-2:
+      AMI: ami-48d38c2b
+    eu-central-1:
+      AMI: ami-bc5b48d0
+    ap-northeast-2:
+      AMI: ami-249b554a
+    ap-northeast-1:
+      AMI: ami-383c1956
+    us-east-1:
+      AMI: ami-60b6c60a
+    sa-east-1:
+      AMI: ami-6817af04
+    us-west-1:
+      AMI: ami-d5ea86b5
+    us-west-2:
+      AMI: ami-f0091d91
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !FindInMap [RegionMap, !Ref 'AWS::Region', AMI]
+      InstanceType: t2.micro
+      NetworkInterfaces:
+      - AssociatePublicIpAddress: 'true'
+        DeviceIndex: '0'
+        GroupSet: 
+        - # TODO import exported security group id
+        SubnetId: # TODO import exported subnet id
+      Tags:
+      - Key: Name
+        Value: hello-world
+      UserData:
+        'Fn::Base64': !Sub |
+          #!/bin/bash -x
+          yum install -y httpd
+          cd /var/www/html
+          echo "<html><body>Hello World!</body></html>" > index.html
+          service httpd start
+Outputs:
+  HelloWorldURL:
+    Description: The URL pointing to Hello World!.
+    Value: !Sub 'http://${EC2Instance.PublicIp}'
