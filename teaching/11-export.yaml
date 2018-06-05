@@ -1,0 +1,6 @@
+Outputs:
+  SecurityGroup:
+    Value: !Ref SecurityGroup
+    Description: ID of security group
+    Export:
+      Name: 'Global-SecurityGroup'

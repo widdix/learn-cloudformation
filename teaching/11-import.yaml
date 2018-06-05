@@ -1,0 +1,9 @@
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      NetworkInterfaces:
+      - AssociatePublicIpAddress: 'true'
+        DeviceIndex: '0'
+        GroupSet: 
+        - Fn::ImportValue: 'Global-SecurityGroup'
