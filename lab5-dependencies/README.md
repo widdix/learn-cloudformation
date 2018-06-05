@@ -11,7 +11,7 @@ CloudFormation detects dependencies between resources and creates, updates, or d
 ## Create a template
 1. Open ``stub.yaml`` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Add a reference to ``SecurityGroup`` to the list of ``SecurityGroupIds`` of the EC2 instance (see [Reference function](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)).
-1. Add a reference to ``KeyName`` (parameter) to the ``KeyName``of the EC2 instance (see [Reference function](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)).
+1. Add a reference to the parmater ``KeyName`` to the ``KeyName``of the EC2 instance (see [Reference function](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)).
 
 ## Create a stack based on the template
 1. Open [CloudFormation](https://console.aws.amazon.com/cloudformation) in AWS Management Console.

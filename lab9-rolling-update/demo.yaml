@@ -62,7 +62,6 @@ Resources:
         Target: HTTP:80/
         Timeout: '5'
         UnhealthyThreshold: '2'
-      LoadBalancerName: elb
       Listeners:
       - InstancePort: '80'
         InstanceProtocol: HTTP

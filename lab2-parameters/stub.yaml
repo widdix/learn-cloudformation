@@ -10,12 +10,9 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId:
-        Ref: AMI
-      InstanceType:
-        Ref: InstanceType
-      SubnetId:
-        Ref: Subnet
+      ImageId: !Ref AMI
+      InstanceType: !Ref InstanceType
+      SubnetId: !Ref Subnet
       Tags:
       - Key: Name
         Value: learn-cloudformation-2-parameters

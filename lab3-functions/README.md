@@ -6,6 +6,8 @@ Use input parameters to be able to re-use CloudFormation templates-
 1. Create a CloudFormation template using build-in functions ``Fn::Base64`` and ``Fn::Join``.
 1. Create a CloudFormation stack based on your template.
 
+# TODO mention Fn:Sub
+
 ## Instructions
 
 ## Create a template
