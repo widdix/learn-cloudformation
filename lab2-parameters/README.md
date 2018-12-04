@@ -9,10 +9,10 @@ Use input parameters to be able to re-use CloudFormation templates-
 ## Instructions
 
 ## Create a template
-1. Open ``stub.yaml`` with an editor of your choice. The stub file contains a skeleton to start from.
-1. Add a parameter called ``AMI`` of type ``String`` to the ``Parameters`` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
-1. Add a parameter called ``InstanceType`` of type ``String`` to the ``Parameters`` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
-1. Add a parameter called ``Subnet`` of type ``AWS::EC2::Subnet::Id`` to the ``Parameters`` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
+1. Open `stub.yaml` with an editor of your choice. The stub file contains a skeleton to start from.
+1. Add a parameter called `AMI` of type `String` to the `Parameters` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
+1. Add a parameter called `InstanceType` of type `String` to the `Parameters` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
+1. Add a parameter called `Subnet` of type `AWS::EC2::Subnet::Id` to the `Parameters` section (see [Parameters section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)).
 
 
 ## Create a stack based on the template
@@ -21,10 +21,10 @@ Use input parameters to be able to re-use CloudFormation templates-
 1. Select **Upload a template to Amazon S3**.
 1. Choose the template file you created for this lab.
 1. Click **Next** button.
-1. Insert ``lab2-$username``as stack name. Replace ``$username``with your username (e.g. lab2-awittig).
+1. Insert `lab2-$username`as stack name. Replace `$username`with your username (e.g. lab2-awittig).
 1. Select a random subnet as parameter for **Subnet**.
-1. Insert ``t2.micro`` as parameter for **InstanceType**.
-1. Insert ``ami-bff32ccc`` (eu-west-1) or ``ami-bc5b48d0``(eu-central-1) as parameter for **AMI**.
+1. Insert `t2.micro` as parameter for **InstanceType**.
+1. Insert `ami-bff32ccc` (eu-west-1) or `ami-bc5b48d0`(eu-central-1) as parameter for **AMI**.
 1. Click **Next** button.
 1. Skip next step by clicking on **Next** button.
 1. Review your input and click **Create** button.
@@ -39,4 +39,4 @@ Use input parameters to be able to re-use CloudFormation templates-
 * [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)
 
 ## Sample solution
-This lab includes a sample solution ``sample-solution.yaml``. Use it if you are stuck during the creation of your template of if you want to review your results.
+This lab includes a sample solution `sample-solution.yaml`. Use it if you are stuck during the creation of your template of if you want to review your results.

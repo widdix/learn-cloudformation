@@ -9,9 +9,9 @@ Use a CloudFormationtemplate to calculate the monthly costs.
 1. Open [CloudFormation](https://console.aws.amazon.com/cloudformation) in AWS Management Console.
 1. Click **Create Stack** button.
 1. Select **Upload a template to Amazon S3**.
-1. Choose file ``learn-cloudformation/lab10-estimate-costs/demo.yaml``.
+1. Choose file `learn-cloudformation/lab10-estimate-costs/demo.yaml`.
 1. Click **Next** button.
-1. Insert ``lab10-$username``as stack name. Replace ``$username`` with your username (e.g. lab10-awittig).
+1. Insert `lab10-$username`as stack name. Replace `$username` with your username (e.g. lab10-awittig).
 1. Select two random subnets and the only available VPC as **Parameters**.
 1. Click **Next** button.
 1. Skip next step by clicking on **Next** button.

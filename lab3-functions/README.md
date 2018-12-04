@@ -1,6 +1,6 @@
 # Lab 3: Using build-in functions
 
-Use input parameters to be able to re-use CloudFormation templates-
+Use input parameters to be able to re-use CloudFormation templates.
 
 ## Overview
 1. Create a CloudFormation template using build-in functions `Fn::Base64` and `Fn::Sub`.

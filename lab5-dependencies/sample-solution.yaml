@@ -1,6 +1,6 @@
 ---
 AWSTemplateFormatVersion: '2010-09-09'
-Description: EC2 instance with functions
+Description: EC2 instance with SecurityGroup
 Parameters:
   AMI:
     Description: AMI to start virtual server
