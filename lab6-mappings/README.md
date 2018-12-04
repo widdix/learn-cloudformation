@@ -14,7 +14,8 @@ Mappings are mapping a key to a set of values. Typical use case: defining a mapp
 1. Add a mapping named ``RegionAMIMap``. The mapping should contain a region id as key, ``AmazonLinux`` as name and the AMI id as value per region (see [Mappings section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html))).
 1. Use the mapping ``RegionAMIMap`` to define the AMI for the EC2 instance (see [Mappings section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html)) and [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html).
 
-###AMIs per region
+### AMIs per region
+```
 ap-northeast-1 => ami-cbf90ecb
 ap-southeast-1 => ami-68d8e93a
 ap-southeast-2 => ami-fd9cecc7
@@ -24,6 +25,7 @@ sa-east-1 => ami-b52890a8
 us-east-1 => ami-1ecae776
 us-west-1 => ami-d114f295
 us-west-2 => ami-e7527ed7
+```
 
 ## Create a stack based on the template
 1. Open [CloudFormation](https://console.aws.amazon.com/cloudformation) in AWS Management Console.

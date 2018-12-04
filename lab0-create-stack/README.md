@@ -19,7 +19,7 @@ Create a CloudFormation stack based on an existing template.
 1. Wait until your stack reaches status **CREATE_COMPLETE**.
 1. Select your stack by clicking on row of the table.
 1. Switch to the **Outputs** tab.
-1. Search for **HelloWorldURL* and click on the URL.
+1. Search for **HelloWorldURL** and click on the URL.
 1. A website showing `Hello World!` should appear.
 1. Select your stack by clicking on row of the table again.
 1. Select **Delete Stack** from the **Actions** menu.
