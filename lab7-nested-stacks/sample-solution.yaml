@@ -32,11 +32,11 @@ Resources:
       TemplateURL: https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/s3-stack.json
       TimeoutInMinutes: '2'
       Parameters:
-        InstanceId: !Sub ${EC2Stack.Outputs.InstanceId}
+        InstanceId: !GetAtt 'EC2Stack.Outputs.InstanceId'
 Outputs:
   InstanceId:
-    Value: !Sub ${EC2Stack.Outputs.InstanceId}
+    Value: !GetAtt 'EC2Stack.Outputs.InstanceId'
     Description: ID of virtual server
   PublicIPAddress:
-    Value: !Sub ${EC2Stack.Outputs.PublicIPAddress}
+    Value: !GetAtt 'EC2Stack.Outputs.PublicIPAddress'
     Description: public IP address of virtual server
