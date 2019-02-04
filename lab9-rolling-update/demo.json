@@ -119,7 +119,6 @@
       "Properties": {
         "MinSize": "1",
         "MaxSize": "2",
-        "DesiredCapacity": "1",
         "LaunchConfigurationName": {"Ref": "LaunchConfiguration"},
         "VPCZoneIdentifier": {"Ref": "SubnetsParameter"},
         "LoadBalancerNames": [{"Ref": "ELB"}],
