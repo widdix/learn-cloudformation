@@ -46,6 +46,6 @@
 	},
 	"Outputs": {
 		// TODO
-		// add ID of virtual server and public IP address to outputs
+		// add ID of virtual server and public/private IP address to outputs
 	}
 }

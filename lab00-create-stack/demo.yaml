@@ -1,13 +1,21 @@
 ---
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Hello World! example
+Description: 'Hello World! example'
 Parameters:
   VPC:
-    Description: The default VPC
+    Description: 'The default VPC'
     Type: AWS::EC2::VPC::Id
   Subnet:
-    Description: A public subnet from default VPC.
+    Description: 'A subnet from default VPC.'
     Type: AWS::EC2::Subnet::Id
+  SubnetType:
+    Description: 'Choose the type of the subnet.'
+    Type: String
+    AllowedValues:
+    - 'Private'
+    - 'Public'
+Conditions:
+  HasPublicSubnet: !Equals [!Ref SubnetType, 'Public']
 Mappings:
   RegionMap:
     eu-west-1:
@@ -37,7 +45,7 @@ Resources:
       ImageId: !FindInMap [RegionMap, !Ref 'AWS::Region', AMI]
       InstanceType: t2.micro
       NetworkInterfaces:
-      - AssociatePublicIpAddress: 'true'
+      - AssociatePublicIpAddress: !If [HasPublicSubnet, 'true', 'false']
         DeviceIndex: '0'
         GroupSet: 
         - !Ref WebserverSecurityGroup
@@ -66,4 +74,5 @@ Resources:
 Outputs:
   HelloWorldURL:
     Description: The URL pointing to Hello World!.
-    Value: !Sub 'http://${EC2Instance.PublicIp}'
+    Value: !If [HasPublicSubnet, !Sub 'http://${EC2Instance.PublicIp}', !Sub 'http://${EC2Instance.PrivateIp}']
+  

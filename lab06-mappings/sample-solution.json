@@ -73,10 +73,6 @@
 		"InstanceId": {
 			"Value": {"Ref": "EC2Instance"},
 			"Description": "ID of virtual server"
-		},
-		"PublicIPAddress": {
-			"Value": {"Fn::GetAtt": ["EC2Instance", "PublicIp"]},
-			"Description": "public IP address of virtual server"
 		}
 	}
 }

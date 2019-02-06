@@ -9,7 +9,18 @@
 		"Subnet": {
 			"Description": "A public subnet from default VPC.",
 			"Type": "AWS::EC2::Subnet::Id"
+		},
+		"SubnetType": {
+			"Description": "Choose the type of the subnet.",
+			"Type": "String",
+			"AllowedValues": [
+				"Private",
+				"Public"
+			]
 		}
+	},
+	"Conditions": {
+		"HasPublicSubnet": {"Fn::Equals": [{"Ref": "SubnetType"}, "Public"]}
 	},
 	"Mappings": {
 		"RegionMap": {
@@ -32,7 +43,7 @@
 				"ImageId": {"Fn::FindInMap": ["RegionMap", {"Ref": "AWS::Region"}, "AMI"]},
 				"InstanceType": "t2.micro",
 				"NetworkInterfaces": [{
-					"AssociatePublicIpAddress": "true",
+					"AssociatePublicIpAddress": {"Fn::If" : ["HasPublicSubnet", "true", "false"]},
 					"DeviceIndex": "0",
 					"GroupSet": [{"Ref": "WebserverSecurityGroup"}],
 					"SubnetId": {"Ref": "Subnet"}
@@ -67,7 +78,7 @@
 	"Outputs": {
 		"HelloWorldURL": {
 			"Description": "The URL pointing to Hello World!.",
-			"Value": {"Fn::Join": ["", ["http://", {"Fn::GetAtt": ["EC2Instance", "PublicIp"]}]]}
+			"Value": {"Fn::If" : ["HasPublicSubnet", {"Fn::Join": ["", ["http://", {"Fn::GetAtt": ["EC2Instance", "PublicIp"]}]]}, {"Fn::Join": ["", ["http://", {"Fn::GetAtt": ["EC2Instance", "PrivateIp"]}]]}]}
 		}
 	}
 }

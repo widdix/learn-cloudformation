@@ -11,7 +11,8 @@ Use outputs to get access to informations about the resources created by a stack
 ## Create a template
 1. Open `stub.yaml` with an editor of your choice. The stub file contains a skeleton to start from.
 1. Add `InstanceId` containing the instance-id of the EC2 instance to the outputs section (see [Outputs section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) and [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)).
-1. Add `PublicIPAddress` containing the public IP address of the EC2 instance to the outputs section: [Outputs section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) and [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)).
+1. Launching the instance into a public subnet? Otherwise skip this step. Add `PublicIPAddress` containing the public IP address of the EC2 instance to the outputs section: [Outputs section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) and [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)).
+1. Launching the instance into a private subnet? Otherwise skip this step. Add `PrivateIPAddress` containing the private IP address of the EC2 instance to the outputs section: [Outputs section](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) and [Resource Type: EC2 instance](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)).
 
 ## Create a stack based on the template
 1. Open [CloudFormation](https://console.aws.amazon.com/cloudformation) in AWS Management Console.
