@@ -5,7 +5,7 @@
 		"AMI": {
 			"Description": "AMI to start virtual server",
 			"Type": "String",
-			"MaxLength": 12,
+			"MaxLength": 21,
 			"MinLength": 12
 		},
 		"InstanceType": {
