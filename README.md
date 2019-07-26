@@ -2,6 +2,10 @@
 
 Labs helping you to learn AWS CloudFormation within a day.
 
+Are you looking for an instructor-led workshop based on these labs? Say [hello@widdix.net](mailto:hello@widdix.net).
+
+> Raise the VPCs per region limit if you run this lab with a larger group of people!
+
 ## Setup
 
 Clone or [download](https://github.com/widdix/learn-cloudformation/archive/master.zip) this repository on your local machine.
