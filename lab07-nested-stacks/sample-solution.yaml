@@ -24,12 +24,12 @@ Resources:
         VPC: !Ref VPC
         Subnet: !Ref Subnet
         URL: !Ref URL
-      TemplateURL: https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/ec2-stack.json
+      TemplateURL: https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab07-nested-stacks/ec2-stack.json
       TimeoutInMinutes: '5'
   S3Stack:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/s3-stack.json
+      TemplateURL: https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab07-nested-stacks/s3-stack.json
       TimeoutInMinutes: '2'
       Parameters:
         InstanceId: !GetAtt 'EC2Stack.Outputs.InstanceId'

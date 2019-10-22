@@ -17,8 +17,8 @@ Parameters:
     Default: http://widdix.net/
 Resources:
   # add stacks
-	# https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/ec2-stack.json
-	# https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab7-nested-stacks/s3-stack.json
+	# https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab07-nested-stacks/ec2-stack.json
+	# https://s3-eu-west-1.amazonaws.com/learn-cloudformation/lab07-nested-stacks/s3-stack.json
 Outputs:
   # TODO add outputs
 	# from stack lab6-mappings (instance id and public IP address)
